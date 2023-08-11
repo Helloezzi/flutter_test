@@ -3,6 +3,9 @@
 #include <optional>
 
 #include "flutter/generated_plugin_registrant.h"
+#include "../../lib/test.h"
+
+#include <iostream>
 
 FlutterWindow::FlutterWindow(const flutter::DartProject& project)
     : project_(project) {}
@@ -13,6 +16,11 @@ bool FlutterWindow::OnCreate() {
   if (!Win32Window::OnCreate()) {
     return false;
   }
+
+  std::cout << "Morai Interface Team is Best" << std::endl;
+
+  auto res = morai::comm::Max(10, 7);
+  std::cout << "Max(10, 7) = " << res << std::endl;
 
   RECT frame = GetClientArea();
 
